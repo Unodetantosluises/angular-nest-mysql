@@ -1,0 +1,37 @@
+<div class="card">
+  <p-toast></p-toast>
+
+  <h2>Listado de CatPmi</h2>
+
+  <p-table [value]="catPmis" [loading]="loading" [tableStyle]="{'min-width': '50rem'}" styleClass="p-datatable-striped" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10, 25, 50]">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>pq</th>
+        <th>clvsi</th>
+        <th>nomProc</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-catPmi>
+      <tr>
+        <td>{{catPmi.pq}}</td>
+        <td>{{catPmi.clvsi}}</td>
+        <td>{{catPmi.nomProc}}</td>
+        <td>
+          <div class="flex gap-2">
+            <button pButton icon="pi pi-eye" class="p-button-rounded p-button-info" pTooltip="Editar"></button>
+            <button pButton icon="pi pi-pincel" class="p-button-rounded p-button-success" pTooltip="Editar"></button>
+            <button pButton icon="pi pi-trash" class="p-button-rounded p-button-danger" pTooltip="Eliminar"></button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="3" class="text-center">No se encontraron registros</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
