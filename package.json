@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "nx serve",
+    "build": "nx build",
+    "watch": "nx build --watch --configuration development",
+    "test": "nx test"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
     "@angular/router": "^18.2.0",
     "@primeng/themes": "^18.0.2",
     "nest-angular-mysql": "file:",
+    "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^18.0.2",
     "rxjs": "~7.8.0",
@@ -28,8 +29,13 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.14",
+    "@angular-devkit/core": "^18.2.14",
+    "@angular-devkit/schematics": "^18.2.14",
     "@angular/cli": "^18.2.14",
     "@angular/compiler-cli": "^18.2.0",
+    "@nx/angular": "20.8.1",
+    "@nx/workspace": "20.8.1",
+    "@schematics/angular": "^18.2.14",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
@@ -37,6 +43,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "nx": "20.8.1",
     "typescript": "~5.5.2"
   }
 }

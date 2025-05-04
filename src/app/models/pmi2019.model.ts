@@ -1,0 +1,33 @@
+export interface Pmi2019 {
+  no?: number;
+  partida?: number;
+  nz?: number;
+  zona?: string;
+  pq?: number;
+  del?: string;
+  delegoumae?: string;
+  clp?: string;
+  tipo?: string;
+  numero?: string;
+  localidad?: string;
+  clvsi?: string;
+  nomProc?: string;
+  preciosiva?: number;
+  min20?: number;
+  max20?: number;
+  imax20siva?: number;
+  imax20civa?: number;
+  min21?: number;
+  max21?: number;
+  imax21siva?: number;
+  imax21civa?: number;
+  min22?: number;
+  max22?: number;
+  imax22siva?: number;
+  imax22civa?: number;
+  min36?: number;
+  max36?: number;
+  imax36siva?: number;
+  imax36civa?: number;
+  bcc?: number;
+}

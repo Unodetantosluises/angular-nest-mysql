@@ -1,34 +1,34 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { Observable, throwError } from "rxjs";
-import { catchError } from "rxjs";
-import { CatPmi } from "../models/cat-pmi.model";
 import { environment } from "../../enviroments/environmet";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { catchError, Observable, throwError } from "rxjs";
+import { CatPmibcc } from '../models/cat-pmibcc.model';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class CatPmiService {
-  private apiUrl = `${environment.apiUrl}/cat-pmi`;
+export class CatPmiBccService {
+  private apiUrl = `${environment.apiUrl}/cat-pmiBcc`;
 
   constructor(private http: HttpClient) { }
 
-  getCatPmis(): Observable<CatPmi[]> {
-    return this.http.get<CatPmi[]>(this.apiUrl)
+  getcatpmiBccs(): Observable<CatPmibcc[]> {
+    return this.http.get<CatPmibcc[]>(this.apiUrl)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   private handleError(error: HttpErrorResponse) {
-    console.error('Error completo:', error);
     let errorMessage = 'Ocurrió un error desconocido';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = `Error del cliente: ${error.error.message}`;
+
+    if(error.error instanceof ErrorEvent) {
+      errorMessage = `Error: ${error.error.message}`;
     } else {
       errorMessage = `Código: ${error.status}, mensaje: ${error.error?.message || error.message}`;
     }
+
     console.error(errorMessage);
     return throwError(() => new Error(errorMessage));
   }

@@ -1,0 +1,35 @@
+<div class="layout-wrapper">
+  <!-- Sidebar -->
+   <div class="sidebar" [ngClass]="{'sidebar-collapsed': !sidebarVisible}">
+    <div class="logo-container">
+      <h2 class="logo">Mi App</h2>
+      <button pButton class="p-button-text p-button-rounded sidebar-toggle" icon="pi pi-chevron-left" [ngClass]="{'rotate-icon': !sidebarVisible}" (click)="toogleSidebar()"></button>
+    </div>
+
+    <div class="menu-container">
+      <ul class="navigation-menu">
+        <li *ngFor="let item of menuItems">
+          <a [routerLink]="item.routerLink" routerLinkActive="active-route" class="nav-link">
+            <i [class]="item.icon"></i>
+            <span *ngIf="sidebarVisible" class="nav-text">{{item.label}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+   </div>
+
+   <!-- Main Content -->
+   <div class="main-content" [ngClass]="{'main-content-expanded': !sidebarVisible}">
+    <header class="header">
+      <h1>Sistema de Gestion</h1>
+    </header>
+
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 Sistema de Gestión</p>
+    </footer>
+   </div>
+</div>
