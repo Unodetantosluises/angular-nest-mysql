@@ -1,0 +1,78 @@
+<div class="card">
+  <p-toast></p-toast>
+
+  <h2>Listado de CatUniMed19</h2>
+
+  <p-table [value]="catUniMed19s" [loading]="loading" [tableStyle]="{'min-width' : '60rem'}" styleClass="p-datatable-striped" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10, 25, 50]">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>DEL</th>
+        <th>DELEGACION</th>
+        <th>UI</th>
+        <th>CLP</th>
+        <th>TIPO</th>
+        <th>NUMERO</th>
+        <th>NIVEL</th>
+        <th>LOCALIDAD</th>
+        <th>MUNICIPIO</th>
+        <th>ESTADO</th>
+        <th>DOMICILIO</th>
+        <th>DIRECTOR</th>
+        <th>TELDIRECTO</th>
+        <th>TELCONMUTADOR</th>
+        <th>TELFAX</th>
+        <th>EXT</th>
+        <th>DELEGADO</th>
+        <th>CORREODELEGADO</th>
+        <th>JPM</th>
+        <th>CORREOJPM</th>
+        <th>LATITUD</th>
+        <th>LONGITUD</th>
+        <th>CONSULTORIOS</th>
+        <th>ACCIONES</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-catUniMed19>
+      <tr>
+        <td>{{catUniMed19.del}}</td>
+        <td>{{catUniMed19.delegacion}}</td>
+        <td>{{catUniMed19.ui}}</td>
+        <td>{{catUniMed19.clp}}</td>
+        <td>{{catUniMed19.tipo}}</td>
+        <td>{{catUniMed19.numero}}</td>
+        <td>{{catUniMed19.nivel}}</td>
+        <td>{{catUniMed19.localidad}}</td>
+        <td>{{catUniMed19.municipio}}</td>
+        <td>{{catUniMed19.estado}}</td>
+        <td>{{catUniMed19.domicilio}}</td>
+        <td>{{catUniMed19.director}}</td>
+        <td>{{catUniMed19.telDirecto}}</td>
+        <td>{{catUniMed19.telConmutador}}</td>
+        <td>{{catUniMed19.telFax}}</td>
+        <td>{{catUniMed19.ext}}</td>
+        <td>{{catUniMed19.delegado}}</td>
+        <td>{{catUniMed19.correoDelegado}}</td>
+        <td>{{catUniMed19.jpm}}</td>
+        <td>{{catUniMed19.correoJpm}}</td>
+        <td>{{catUniMed19.latitud}}</td>
+        <td>{{catUniMed19.longitud}}</td>
+        <td>{{catUniMed19.consultorios}}</td>
+        <td>
+          <div class="flex gap-2">
+            <button pButton icon="pi pi-eye" class="p-button-rounded p-button-info" pTooltip="Ver"></button>
+            <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success" pTooltip="Editar"></button>
+            <button pButton icon="pi pi-trash" class="p-button-rounded p-button-danger" pTooltip="Eliminar"></button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="3" class="text-center">No se encontraron registros</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</div>

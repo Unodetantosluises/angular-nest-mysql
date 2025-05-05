@@ -6,10 +6,19 @@
   <p-table [value]="catPmis" [loading]="loading" [tableStyle]="{'min-width': '50rem'}" styleClass="p-datatable-striped" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10, 25, 50]">
     <ng-template pTemplate="header">
       <tr>
-        <th>pq</th>
-        <th>clvsi</th>
-        <th>nomProc</th>
-        <th>Acciones</th>
+        <th pSortableColumn="pq" style="width:20%">
+          PQ
+          <p-sortIcon field="pq" />
+        </th>
+        <th pSortableColumn="clvsi" style="width: 20%">
+          CLVSI
+          <p-sortIcon field="clvsi" />
+        </th>
+        <th pSortableColumn="nomProc" style="width: 20%">
+          NOMPROC
+          <p-sortIcon field="nomProc" />
+        </th>
+        <th>ACCIONES</th>
       </tr>
     </ng-template>
 
@@ -21,7 +30,7 @@
         <td>
           <div class="flex gap-2">
             <button pButton icon="pi pi-eye" class="p-button-rounded p-button-info" pTooltip="Editar"></button>
-            <button pButton icon="pi pi-pincel" class="p-button-rounded p-button-success" pTooltip="Editar"></button>
+            <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success" pTooltip="Editar"></button>
             <button pButton icon="pi pi-trash" class="p-button-rounded p-button-danger" pTooltip="Eliminar"></button>
           </div>
         </td>
@@ -30,7 +39,7 @@
 
     <ng-template pTemplate="emptymessage">
       <tr>
-        <td colspan="3" class="text-center">No se encontraron registros</td>
+        <td colspan="4" class="text-center">No se encontraron registros</td>
       </tr>
     </ng-template>
 

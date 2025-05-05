@@ -32,17 +32,22 @@ export class MainLayoutComponent {
   menuItems: MenuItem[] = [
     {
       label: 'CatPmi',
-      icon: 'pi pi-table',
+      icon: 'pi pi-database',
       routerLink: '/cat-pmi'
     },
     {
       label: 'Pmi2019',
-      icon: 'pi pi-table',
+      icon: 'pi pi-database',
       routerLink: '/pmi2019'
     },
     {
+      label: 'CatUniMed19',
+      icon: 'pi pi-database',
+      routerLink: '/catunimed19'
+    },
+    {
       label: 'CatPmiBcc',
-      icon: 'pi pi-table',
+      icon: 'pi pi-database',
       routerLink: '/cat-pmibcc'
     }
   ];
